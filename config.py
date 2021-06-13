@@ -49,7 +49,7 @@ cfg = __C
 __C.GLOBAL_RANK = 0
 __C.EPOCH = 0
 # Absolute path to a location to keep some large files, not in this dir.
-__C.ASSETS_PATH = '/home/dcg-adlr-atao-data.cosmos277/assets'
+__C.ASSETS_PATH = './assets'
 
 # Use class weighted loss per batch to increase loss for low pixel count classes per batch
 __C.BATCH_WEIGHTING = False
@@ -118,7 +118,8 @@ __C.DATASET.CROP_SIZE = '896'
 
 __C.MODEL = AttrDict()
 __C.MODEL.BN = 'regularnorm'
-__C.MODEL.BNFUNC = None
+# __C.MODEL.BNFUNC = None
+__C.MODEL.BNFUNC = torch.nn.BatchNorm2d
 __C.MODEL.MSCALE = False
 __C.MODEL.THREE_SCALE = False
 __C.MODEL.ALT_TWO_SCALE = False
